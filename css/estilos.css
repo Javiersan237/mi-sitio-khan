@@ -1,0 +1,292 @@
+/* ===== RESET BÁSICO ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f6f9;
+    color: #222;
+    line-height: 1.6;
+}
+
+.contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== CABECERA ===== */
+.cabecera {
+    background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.cabecera h1 {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+}
+
+.subtitulo {
+    opacity: 0.9;
+    font-size: 1.05rem;
+}
+
+/* ===== MENÚ ===== */
+.menu {
+    background: #2c3e50;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.menu a {
+    display: block;
+    color: #ecf0f1;
+    padding: 16px 24px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.25s, color 0.25s;
+}
+
+.menu a:hover,
+.menu a.activo {
+    background: #4b6cb7;
+    color: #fff;
+}
+
+/* ===== CONTENIDO ===== */
+main {
+    padding: 40px 20px;
+    min-height: 60vh;
+}
+
+.hero {
+    text-align: center;
+    padding: 30px 20px 50px;
+}
+
+.hero h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #182848;
+}
+
+.hero p {
+    max-width: 750px;
+    margin: 0 auto 25px;
+    font-size: 1.05rem;
+}
+
+.botones {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ===== BOTONES ===== */
+.btn {
+    display: inline-block;
+    padding: 12px 26px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.btn-primario {
+    background: #4b6cb7;
+    color: #fff;
+}
+
+.btn-secundario {
+    background: #fff;
+    color: #4b6cb7;
+    border: 2px solid #4b6cb7;
+}
+
+/* ===== TARJETAS ===== */
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.tarjeta {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.25s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+}
+
+.tarjeta h3 {
+    color: #182848;
+    margin-bottom: 10px;
+}
+
+.tarjeta a {
+    color: #4b6cb7;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.tarjeta a:hover {
+    text-decoration: underline;
+}
+
+/* ===== TEORÍA ===== */
+.teoria {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.teoria h2 {
+    color: #182848;
+    border-bottom: 3px solid #4b6cb7;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.teoria h3 {
+    margin: 20px 0 10px;
+    color: #2c3e50;
+}
+
+.teoria p, .teoria ul {
+    margin-bottom: 15px;
+}
+
+.teoria ul {
+    padding-left: 25px;
+}
+
+.teoria code {
+    background: #eef1f7;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    color: #c0392b;
+    font-size: 0.95em;
+}
+
+.teoria pre {
+    background: #2c3e50;
+    color: #ecf0f1;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin-bottom: 15px;
+}
+
+.teoria pre code {
+    background: transparent;
+    color: #ecf0f1;
+    padding: 0;
+}
+
+.teoria canvas {
+    display: block;
+    margin: 15px auto;
+    border-radius: 8px;
+}
+
+/* ===== GALERÍA ===== */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 30px;
+}
+
+.proyecto {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.25s;
+}
+
+.proyecto:hover {
+    transform: translateY(-5px);
+}
+
+.proyecto h2 {
+    font-size: 1.15rem;
+    color: #182848;
+    margin-bottom: 15px;
+}
+
+.proyecto p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.proyecto p a {
+    color: #4b6cb7;
+}
+
+/* ===== CONTENEDORES DE CANVAS p5.js ===== */
+.canvas-p5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.canvas-p5 canvas {
+    max-width: 100%;
+    height: auto !important;
+    border-radius: 6px;
+}
+
+/* ===== PIE ===== */
+.pie {
+    background: #182848;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+    .cabecera h1 { font-size: 1.6rem; }
+    .menu a { padding: 12px 16px; font-size: 0.9rem; }
+    .hero h2 { font-size: 1.4rem; }
+    .teoria { padding: 20px; }
+}
