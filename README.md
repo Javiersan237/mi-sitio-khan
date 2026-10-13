@@ -2,7 +2,7 @@
 
 Sitio web educativo que reúne 5 dibujos animados desarrollados originalmente en **Khan Academy** con Processing.js, ahora adaptados a **p5.js** y desplegados como sitio estático con HTML5, CSS3 y JavaScript puro.
 
-🌐 **Sitio en vivo:** [https://TU-USUARIO.github.io/mi-sitio-khan/](https://javiersan237.github.io/mi-sitio-khan/)
+🌐 **Sitio en vivo:** [https://javiersan237.github.io/mi-sitio-khan/](https://javiersan237.github.io/mi-sitio-khan/)
 
 ---
 
