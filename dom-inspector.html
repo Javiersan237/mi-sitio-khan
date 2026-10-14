@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspector del DOM | Estructura del sitio</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header class="cabecera">
+        <div class="contenedor">
+            <h1>🌳 Inspector del DOM</h1>
+            <p class="subtitulo">Visualización jerárquica de la estructura HTML de cada página</p>
+        </div>
+    </header>
+
+    <nav class="menu">
+        <div class="contenedor">
+            <ul>
+                <li><a href="index.html">🏠 Inicio</a></li>
+                <li><a href="teoria.html">📚 Teoría</a></li>
+                <li><a href="proyectos.html">🖼️ Proyectos</a></li>
+                <li><a href="dom-inspector.html" class="activo">🌳 DOM</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="contenedor">
+        <section class="intro-dom">
+            <h2>¿Qué es el DOM?</h2>
+            <p>
+                El <strong>DOM (Document Object Model)</strong> es una representación en forma de árbol
+                de todos los elementos HTML de una página. Cada etiqueta se convierte en un <em>nodo</em>
+                que cuelga de un nodo padre, formando una jerarquía que el navegador usa para renderizar
+                y manipular el contenido.
+            </p>
+            <p>
+                A continuación se muestra el árbol del DOM de las <strong>3 páginas principales</strong>
+                de este proyecto. Pasa el cursor sobre cada nodo para resaltarlo.
+            </p>
+        </section>
+
+        <!-- Selector de página -->
+        <div class="selector-pagina">
+            <button class="btn-tab activo" data-target="dom-index">🏠 index.html</button>
+            <button class="btn-tab" data-target="dom-teoria">📚 teoria.html</button>
+            <button class="btn-tab" data-target="dom-proyectos">🖼️ proyectos.html</button>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- ÁRBOL DEL DOM: index.html                    -->
+        <!-- ============================================ -->
+        <section id="dom-index" class="panel-dom activo">
+            <h2 class="titulo-arbol">📄 Estructura del DOM — index.html</h2>
+            <div class="arbol">
+                <ul>
+                    <li>
+                        <span class="nodo nodo-raiz">&lt;html&gt;</span>
+                        <ul>
+                            <li>
+                                <span class="nodo nodo-head">&lt;head&gt;</span>
+                                <ul>
+                                    <li><span class="nodo">&lt;meta charset="UTF-8"&gt;</span></li>
+                                    <li><span class="nodo">&lt;meta viewport&gt;</span></li>
+                                    <li><span class="nodo">&lt;title&gt;</span></li>
+                                    <li><span class="nodo">&lt;link rel="stylesheet"&gt;</span></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="nodo nodo-body">&lt;body&gt;</span>
+                                <ul>
+                                    <li>
+                                        <span class="nodo nodo-semantico">&lt;header class="cabecera"&gt;</span>
+                                        <ul>
+                                            <li><span class="nodo">&lt;div class="contenedor"&gt;</span>
+                                                <ul>
+                                                    <li><span class="nodo">&lt;h1&gt;🎨 Mis Proyectos...&lt;/h1&gt;</span></li>
+                                                    <li><span class="nodo">&lt;p class="subtitulo"&gt;</span></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span class="nodo nodo-semantico">&lt;nav class="menu"&gt;</span>
+                                        <ul>
+                                            <li><span class="nodo">&lt;ul&gt;</span>
+                                                <ul>
+                                                    <li><span class="nodo">&lt;li&gt;&lt;a href="index.html"&gt;🏠 Inicio&lt;/a&gt;&lt;/li&gt;</span></li>
+                                                    <li><span class="nodo">&lt;li&gt;&lt;a href="teoria.html"&gt;📚 Teoría&lt;/a&gt;&lt;/li&gt;</span></li>
+                                                    <li><span class="nodo">&lt;li&gt;&lt;a href="proyectos.html"&gt;🖼️ Proyectos&lt;/a&gt;&lt;/li&gt;</span></li>
+                                                    <li><span class="nodo">&lt;li&gt;&lt;a href="dom-inspector.html"&gt;🌳 DOM&lt;/a&gt;&lt;/li&gt;</span></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span class="nodo nodo-semantico">&lt;main class="contenedor"&gt;</span>
+                                        <ul>
+                                            <li>
+                                                <span class="nodo">&lt;section class="hero"&gt;</span>
+                                                <ul>
+                                                    <li><span class="nodo">&lt;h2&gt;Bienvenido...&lt;/h2&gt;</span></li>
+                                                    <li><span class="nodo">&lt;p&gt;Este sitio reúne...&lt;/p&gt;</span></li>
+                                                    <li>
+                                                        <span class="nodo">&lt;div class="botones"&gt;</span>
+                                                        <ul>
+                                                            <li><span class="nodo">&lt;a class="btn btn-primario"&gt;</span></li>
+                                                            <li><span class="nodo">&lt;a class="btn btn-secundario"&gt;</span></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <span class="nodo">&lt;section class="tarjetas"&gt;</span>
+                                                <ul>
+                                                    <li><span class="nodo">&lt;div class="tarjeta"&gt; 🖼️ Galería &lt;/div&gt;</span></li>
+                                                    <li><span class="nodo">&lt;div class="tarjeta"&gt; 📚 Teoría &lt;/div&gt;</span></li>
+                                                    <li><span class="nodo">&lt;div class="tarjeta"&gt; 💻 Código &lt;/div&gt;</span></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span class="nodo nodo-semantico">&lt;footer class="pie"&gt;</span>
+                                        <ul>
+                                            <li><span class="nodo">&lt;div class="contenedor"&gt;</span>
+                                                <ul>
+                                                    <li><span class="nodo">&lt;p&gt;© 2025 ...&lt;/p&gt;</span></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><span class="nodo nodo-script">&lt;script src="js/script.js"&gt;</span></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- ÁRBOL DEL DOM: teoria.html                   -->
+        <!-- ============================================ -->
+        <section id="dom-teoria" class="panel-dom">
+            <h2 class="titulo-arbol">📄 Estructura del DOM — teoria.html</h2>
+            <div class="arbol">
+                <ul>
+                    <li>
+                        <span class="nodo nodo-raiz">&lt;html&gt;</span>
+                        <ul>
+                            <li>
+                                <span class="nodo nodo-head">&lt;head&gt;</span>
+                                <ul>
+                                    <li><span class="nodo">&lt;meta charset="UTF-8"&gt;</span></li>
+                                    <li><span class="nodo">&lt;meta viewport&gt;</span></li>
+                                    <li><span class="nodo">&lt;title&gt;Teoría | Canvas y p5.js&lt;/title&gt;</span></li>
+                                    <li><span class="nodo">&lt;link rel="stylesheet"&gt;</span></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="nodo nodo-body">&lt;body&gt;</span>
+                                <ul>
+                                    <li>
+                                        <span class="nodo nodo-semantico">&lt;header class="cabecera"&gt;</span>
+                                        <ul>
+                                            <li><span class="nodo">&lt;h1&gt;📚 Sección Informativa&lt;/h1&gt;</span></li>
+                                            <li><span class="nodo">&lt;p class="subtitulo"&gt;</span></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span class="nodo nodo-semantico">&lt;nav class="menu"&gt;</span>
+                                        <ul>
+                                            <li><span class="nodo">&lt;ul&gt; con 4 enlaces de navegación&lt;/ul&gt;</span></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span class="nodo nodo-semantico">&lt;main class="contenedor"&gt;</span>
+                                        <ul>
+                                            <li>
+                                                <span class="nodo">&lt;article class="teoria"&gt; #1 Canvas</span>
+                                                <ul>
+                                                    <li><span class="nodo">&lt;h2&gt;La etiqueta HTML &lt;canvas&gt;&lt;/h2&gt;</span></li>
+                                                    <li><span class="nodo">&lt;p&gt;Descripción...&lt;/p&gt;</span></li>
+                                                    <li><span class="nodo">&lt;h3&gt;Sintaxis básica&lt;/h3&gt;</span></li>
+                                                    <li><span class="nodo">&lt;pre&gt;&lt;code&gt;...&lt;/code&gt;&lt;/pre&gt;</span></li>
+                                                    <li><span class="nodo">&lt;h3&gt;Obtener el contexto...&lt;/h3&gt;</span></li>
+                                                    <li><span class="nodo">&lt;pre&gt;&lt;code&gt;...&lt;/code&gt;&lt;/pre&gt;</span></li>
+                                                    <li><span class="nodo">&lt;ul&gt; con métodos del contexto 2D&lt;/ul&gt;</span></li>
+                                                    <li><span class="nodo nodo-canvas">&lt;canvas id="demoCanvas"&gt;</span></li>
+                                                    <li><span class="nodo">&lt;pre&gt;&lt;code&gt;ejemplo práctico&lt;/code&gt;&lt;/pre&gt;</span></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <span class="nodo">&lt;article class="teoria"&gt; #2 p5.js</span>
+                                                <ul>
+                                                    <li><span class="nodo">&lt;h2&gt;La librería p5.js&lt;/h2&gt;</span></li>
+                                                    <li><span class="nodo">&lt;p&gt;Descripción...&lt;/p&gt;</span></li>
+                                                    <li><span class="nodo">&lt;pre&gt;&lt;code&gt;cómo incluirla&lt;/code&gt;&lt;/pre&gt;</span></li>
+                                                    <li><span class="nodo">&lt;pre&gt;&lt;code&gt;setup/draw&lt;/code&gt;&lt;/pre&gt;</span></li>
+                                                    <li><span class="nodo">&lt;ul&gt; con funciones clave&lt;/ul&gt;</span></li>
+                                                    <li><span class="nodo nodo-canvas">&lt;div id="p5demo"&gt;</span></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span class="nodo nodo-semantico">&lt;footer class="pie"&gt;</span>
+                                    </li>
+                                    <li><span class="nodo nodo-script">&lt;script p5.js (CDN)&gt;</span></li>
+                                    <li><span class="nodo nodo-script">&lt;script&gt; código de las demos&lt;/script&gt;</span></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- ÁRBOL DEL DOM: proyectos.html                -->
+        <!-- ============================================ -->
+        <section id="dom-proyectos" class="panel-dom">
+            <h2 class="titulo-arbol">📄 Estructura del DOM — proyectos.html</h2>
+            <div class="arbol">
+                <ul>
+                    <li>
+                        <span class="nodo nodo-raiz">&lt;html&gt;</span>
+                        <ul>
+                            <li>
+                                <span class="nodo nodo-head">&lt;head&gt;</span>
+                                <ul>
+                                    <li><span class="nodo">&lt;meta charset="UTF-8"&gt;</span></li>
+                                    <li><span class="nodo">&lt;meta viewport&gt;</span></li>
+                                    <li><span class="nodo">&lt;title&gt;Proyectos | Galería&lt;/title&gt;</span></li>
+                                    <li><span class="nodo">&lt;link rel="stylesheet"&gt;</span></li>
+                                    <li><span class="nodo nodo-script">&lt;script p5.js (CDN)&gt;</span></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="nodo nodo-body">&lt;body&gt;</span>
+                                <ul>
+                                    <li>
+                                        <span class="nodo nodo-semantico">&lt;header class="cabecera"&gt;</span>
+                                        <ul>
+                                            <li><span class="nodo">&lt;h1&gt;🖼️ Galería de Proyectos&lt;/h1&gt;</span></li>
+                                            <li><span class="nodo">&lt;p class="subtitulo"&gt;</span></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span class="nodo nodo-semantico">&lt;nav class="menu"&gt;</span>
+                                        <ul>
+                                            <li><span class="nodo">&lt;ul&gt; con 4 enlaces de navegación&lt;/ul&gt;</span></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span class="nodo nodo-semantico">&lt;main class="contenedor"&gt;</span>
+                                        <ul>
+                                            <li>
+                                                <span class="nodo">&lt;section class="galeria"&gt;</span>
+                                                <ul>
+                                                    <li>
+                                                        <span class="nodo">&lt;article class="proyecto"&gt; 🐸 Rana</span>
+                                                        <ul>
+                                                            <li><span class="nodo">&lt;h2&gt;Derivado de "rana loca"&lt;/h2&gt;</span></li>
+                                                            <li><span class="nodo nodo-canvas">&lt;div id="proyecto-rana"&gt;</span></li>
+                                                            <li><span class="nodo">&lt;p&gt;Se hizo usando...&lt;/p&gt;</span></li>
+                                                            <li><span class="nodo">&lt;a class="btn btn-primario"&gt;</span></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <span class="nodo">&lt;article class="proyecto"&gt; 🐰 Conejo</span>
+                                                        <ul>
+                                                            <li><span class="nodo">&lt;h2&gt;Dientes de conejo&lt;/h2&gt;</span></li>
+                                                            <li><span class="nodo nodo-canvas">&lt;div id="proyecto-conejo"&gt;</span></li>
+                                                            <li><span class="nodo">&lt;p&gt;...&lt;/p&gt;</span></li>
+                                                            <li><span class="nodo">&lt;a class="btn btn-primario"&gt;</span></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <span class="nodo">&lt;article class="proyecto"&gt; 🍽️ Cena</span>
+                                                        <ul>
+                                                            <li><span class="nodo">&lt;h2&gt;¿Qué hay de cena?&lt;/h2&gt;</span></li>
+                                                            <li><span class="nodo nodo-canvas">&lt;div id="proyecto-cena"&gt;</span></li>
+                                                            <li><span class="nodo">&lt;p&gt;...&lt;/p&gt;</span></li>
+                                                            <li><span class="nodo">&lt;a class="btn btn-primario"&gt;</span></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <span class="nodo">&lt;article class="proyecto"&gt; ☀️❄️ Nieve</span>
+                                                        <ul>
+                                                            <li><span class="nodo">&lt;h2&gt;Día nevado soleado&lt;/h2&gt;</span></li>
+                                                            <li><span class="nodo nodo-canvas">&lt;div id="proyecto-nieve"&gt;</span></li>
+                                                            <li><span class="nodo">&lt;p&gt;...&lt;/p&gt;</span></li>
+                                                            <li><span class="nodo">&lt;a class="btn btn-primario"&gt;</span></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <span class="nodo">&lt;article class="proyecto"&gt; ⛄ Muñeco</span>
+                                                        <ul>
+                                                            <li><span class="nodo">&lt;h2&gt;Muñeco de nieve&lt;/h2&gt;</span></li>
+                                                            <li><span class="nodo nodo-canvas">&lt;div id="proyecto-muneco"&gt;</span></li>
+                                                            <li><span class="nodo">&lt;p&gt;...&lt;/p&gt;</span></li>
+                                                            <li><span class="nodo">&lt;a class="btn btn-primario"&gt;</span></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span class="nodo nodo-semantico">&lt;footer class="pie"&gt;</span>
+                                    </li>
+                                    <li><span class="nodo nodo-script">&lt;script src="js/dibujos.js"&gt;</span></li>
+                                    <li><span class="nodo nodo-script">&lt;script src="js/script.js"&gt;</span></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Leyenda de colores -->
+        <section class="leyenda">
+            <h3>🎨 Leyenda de colores</h3>
+            <ul>
+                <li><span class="muestra muestra-raiz"></span> Nodo raíz (<code>&lt;html&gt;</code>)</li>
+                <li><span class="muestra muestra-head"></span> Sección <code>&lt;head&gt;</code></li>
+                <li><span class="muestra muestra-body"></span> Sección <code>&lt;body&gt;</code></li>
+                <li><span class="muestra muestra-semantico"></span> Etiquetas semánticas (<code>header</code>, <code>nav</code>, <code>main</code>, <code>footer</code>)</li>
+                <li><span class="muestra muestra-canvas"></span> Canvas / contenedor de p5.js</li>
+                <li><span class="muestra muestra-script"></span> Scripts externos</li>
+                <li><span class="muestra muestra-normal"></span> Etiquetas de contenido</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="pie">
+        <div class="contenedor">
+            <p>© 2025 - Proyecto educativo | Hecho con HTML, CSS, JavaScript y p5.js</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // ===== Selector de pestañas para cambiar entre DOMs =====
+        const tabs = document.querySelectorAll('.btn-tab');
+        const paneles = document.querySelectorAll('.panel-dom');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Quitar activo de todos
+                tabs.forEach(t => t.classList.remove('activo'));
+                paneles.forEach(p => p.classList.remove('activo'));
+
+                // Activar el seleccionado
+                tab.classList.add('activo');
+                const target = document.getElementById(tab.dataset.target);
+                if (target) target.classList.add('activo');
+            });
+        });
+    </script>
+</body>
+</html>

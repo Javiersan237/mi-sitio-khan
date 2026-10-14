@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teoría | Canvas y p5.js</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header class="cabecera">
+        <div class="contenedor">
+            <h1>📚 Sección Informativa</h1>
+            <p class="subtitulo">Canvas HTML5 y la librería p5.js</p>
+        </div>
+    </header>
+
+    <nav class="menu">
+        <div class="contenedor">
+            <ul>
+                <li><a href="index.html">🏠 Inicio</a></li>
+                <li><a href="teoria.html" class="activo">📚 Teoría</a></li>
+                <li><a href="proyectos.html">🖼️ Proyectos</a></li>
+                <li><a href="dom-inspector.html">🌳 DOM</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="contenedor">
+        <!-- SECCIÓN 1: CANVAS -->
+        <article class="teoria">
+            <h2>1. La etiqueta HTML <code>&lt;canvas&gt;</code></h2>
+            <p>
+                La etiqueta <code>&lt;canvas&gt;</code> es un elemento HTML5 que proporciona
+                una <strong>superficie de dibujo bidimensional</strong> (o 3D con WebGL) controlada
+                desde JavaScript. Es ideal para gráficos, animaciones, videojuegos y visualización de datos.
+            </p>
+
+            <h3>1.1 Sintaxis básica</h3>
+            <pre><code>&lt;canvas id="miCanvas" width="400" height="300"&gt;
+    Tu navegador no soporta canvas.
+&lt;/canvas&gt;</code></pre>
+
+            <h3>1.2 Obtener el contexto de renderizado 2D</h3>
+            <p>
+                El "contexto" es el objeto que expone todos los métodos de dibujo. Para 2D se obtiene así:
+            </p>
+            <pre><code>const canvas = document.getElementById("miCanvas");
+const ctx = canvas.getContext("2d");</code></pre>
+
+            <h3>1.3 Métodos más usados del contexto 2D</h3>
+            <ul>
+                <li><code>fillRect(x, y, w, h)</code> → dibuja un rectángulo relleno.</li>
+                <li><code>strokeRect()</code> → dibuja el borde de un rectángulo.</li>
+                <li><code>beginPath()</code> y <code>closePath()</code> → inician/cierran un trazo.</li>
+                <li><code>arc(x, y, radio, inicio, fin)</code> → dibuja círculos o arcos.</li>
+                <li><code>fillStyle</code> y <code>strokeStyle</code> → color de relleno y borde.</li>
+                <li><code>fillText()</code> → escribe texto en el canvas.</li>
+            </ul>
+
+            <h3>1.4 Ejemplo práctico: dibujar un círculo</h3>
+            <canvas id="demoCanvas" width="300" height="200" style="border:2px solid #333; background:#f0f8ff;"></canvas>
+            <pre><code>const c = document.getElementById("demoCanvas");
+const ctx = c.getContext("2d");
+ctx.fillStyle = "tomato";
+ctx.beginPath();
+ctx.arc(150, 100, 60, 0, Math.PI * 2);
+ctx.fill();</code></pre>
+        </article>
+
+        <!-- SECCIÓN 2: P5.JS -->
+        <article class="teoria">
+            <h2>2. La librería p5.js</h2>
+            <p>
+                <strong>p5.js</strong> es una biblioteca de JavaScript basada en Processing que
+                simplifica el dibujo sobre canvas. Fue creada para artistas, diseñadores y
+                principiantes. Khan Academy la usa en su curso de "Computer Programming".
+            </p>
+
+            <h3>2.1 ¿Cómo se incluye?</h3>
+            <pre><code>&lt;script src="https://cdn.jsdelivr.net/npm/p5@2/lib/p5.min.js"&gt;&lt;/script&gt;</code></pre>
+
+            <h3>2.2 Estructura básica de un sketch</h3>
+            <pre><code>function setup() {
+    createCanvas(400, 400);  // se ejecuta una vez
+}
+
+function draw() {
+    background(220);          // se ejecuta en bucle ~60 fps
+    ellipse(200, 200, 100, 100);
+}</code></pre>
+
+            <h3>2.3 Funciones clave</h3>
+            <ul>
+                <li><code>setup()</code>: configuración inicial (tamaño, colores base).</li>
+                <li><code>draw()</code>: se repite continuamente (animaciones).</li>
+                <li><code>mouseX</code>, <code>mouseY</code>: posición del ratón (interactividad).</li>
+                <li><code>random()</code>, <code>noise()</code>: números aleatorios y ruido.</li>
+                <li><code>rotate()</code>, <code>translate()</code>, <code>scale()</code>: transformaciones.</li>
+            </ul>
+
+            <h3>2.4 Ejemplo: cuadrado que sigue al ratón</h3>
+            <div id="p5demo"></div>
+        </article>
+    </main>
+
+    <footer class="pie">
+        <div class="contenedor">
+            <p>© 2025 - Proyecto educativo | Hecho con HTML, CSS, JavaScript y p5.js</p>
+        </div>
+    </footer>
+
+    <!-- p5.js solo se carga en esta página -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@2/lib/p5.min.js"></script>
+    <script>
+        // Demostración del canvas 2D
+        const c = document.getElementById("demoCanvas");
+        const ctx = c.getContext("2d");
+        ctx.fillStyle = "tomato";
+        ctx.beginPath();
+        ctx.arc(150, 100, 60, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Demostración p5.js
+        new p5(function(p) {
+            p.setup = function() {
+                let canvas = p.createCanvas(300, 200);
+                canvas.parent("p5demo");
+            };
+            p.draw = function() {
+                p.background(230);
+                p.fill(100, 150, 255);
+                p.noStroke();
+                p.rect(p.mouseX - 25, p.mouseY - 25, 50, 50);
+            };
+        });
+    </script>
+</body>
+</html>
