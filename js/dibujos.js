@@ -160,3 +160,141 @@ new p5(function(p) {
         p.line(240, 200, 300, 150);
     };
 });
+
+// ============================================
+// SKETCH 6: EL SOL QUE EXPLOTA
+// ============================================
+new p5(function(p) {
+    var sunSize = 30; 
+
+    p.setup = function() {
+        let canvas = p.createCanvas(400, 400);
+        canvas.parent('proyecto-sol');
+    };
+
+    p.draw = function() {
+        p.noStroke();
+        p.background(82, 222, 240);
+
+        sunSize = sunSize + 1;
+        
+        p.fill(255, 204, 0);
+        p.ellipse(200, 298, sunSize, sunSize);
+        
+        p.fill(76, 168, 67);
+        p.rect(0, 300, 400, 100);
+    };
+});
+
+// ============================================
+// SKETCH 7: NUBES QUE SE SEPARAN
+// ============================================
+new p5(function(p) {
+    var leftX = 120;
+    var rightX = 200;
+    var sunRadius = 100;
+
+    p.setup = function() {
+        let canvas = p.createCanvas(400, 400);
+        canvas.parent('proyecto-nubes');
+    };
+
+    p.draw = function() {
+        p.noStroke();
+        p.background(184, 236, 255);
+        
+        p.fill(255, 170, 0);
+        p.ellipse(200, 100, sunRadius, sunRadius);
+        
+        p.fill(255, 255, 255);
+        // Nube izquierda
+        p.ellipse(leftX, 150, 126, 97);
+        p.ellipse(leftX + 62, 150, 70, 60);
+        p.ellipse(leftX - 62, 150, 70, 60);
+        
+        // Nube derecha
+        p.ellipse(rightX, 100, 126, 97);
+        p.ellipse(rightX + 62, 100, 70, 60);
+        p.ellipse(rightX - 62, 100, 70, 60);
+        
+        rightX += 1;
+        leftX -= 1;
+        sunRadius += 2;
+    };
+});
+
+// ============================================
+// SKETCH 8: ESTRELLA FUGAZ
+// ============================================
+new p5(function(p) {
+    var xPos1 = 0;
+    var yPos1 = 200;
+    var xPos2 = 0;
+    var yPos2 = 195;
+    var xPos3 = -20;
+    var yPos3 = 180;
+    var i = 75;
+    var a = 40;
+    var velocidadX = 10;
+    var offsetX = 0;
+
+    p.setup = function() {
+        let canvas = p.createCanvas(400, 400);
+        canvas.parent('proyecto-estrella');
+    };
+
+    p.draw = function() {
+        p.background(29, 40, 115);
+        p.fill(255, 242, 0);
+        offsetX += velocidadX;
+        
+        var x1 = xPos1 + offsetX;
+        var x2 = xPos2 + offsetX;
+        var x3 = xPos3 + offsetX;
+        
+        p.push();
+        p.translate(offsetX, 0);
+        // Parte Izquierda
+        p.triangle(x1, yPos1, x2, yPos1 - i, x3, yPos3);
+        p.triangle(x1, yPos1, x3, yPos3, x1 - i, yPos1);
+        p.triangle(x1, yPos1, x3, yPos3 + a, x1, yPos1 + i);
+        p.triangle(x1, yPos1, x3, yPos3 + a, x1 - i, yPos1);
+        
+        // Parte Derecha
+        p.triangle(x1, yPos1, x2, yPos1 - i, x3 + a, yPos3);
+        p.triangle(x1, yPos1, x2 + i, yPos1, x3 + a, yPos3);
+        p.triangle(x1, yPos1, x1 + i, yPos1, x3 + a, yPos3 + a);
+        p.triangle(x1, yPos1, x1, yPos1 + i, x3 + a, yPos3 + a);
+        p.pop();
+        
+        p.push();
+        p.translate(offsetX, 200);
+        // Parte Izquierda
+        p.triangle(x1, yPos1, x2, yPos1 - i, x3, yPos3);
+        p.triangle(x1, yPos1, x3, yPos3, x1 - i, yPos1);
+        p.triangle(x1, yPos1, x3, yPos3 + a, x1, yPos1 + i);
+        p.triangle(x1, yPos1, x3, yPos3 + a, x1 - i, yPos1);
+        
+        // Parte Derecha
+        p.triangle(x1, yPos1, x2, yPos1 - i, x3 + a, yPos3);
+        p.triangle(x1, yPos1, x2 + i, yPos1, x3 + a, yPos3);
+        p.triangle(x1, yPos1, x1 + i, yPos1, x3 + a, yPos3 + a);
+        p.triangle(x1, yPos1, x1, yPos1 + i, x3 + a, yPos3 + a);
+        p.pop();
+        
+        p.push();
+        p.translate(offsetX, -200);
+        // Parte Izquierda
+        p.triangle(x1, yPos1, x2, yPos1 - i, x3, yPos3);
+        p.triangle(x1, yPos1, x3, yPos3, x1 - i, yPos1);
+        p.triangle(x1, yPos1, x3, yPos3 + a, x1, yPos1 + i);
+        p.triangle(x1, yPos1, x3, yPos3 + a, x1 - i, yPos1);
+        
+        // Parte Derecha
+        p.triangle(x1, yPos1, x2, yPos1 - i, x3 + a, yPos3);
+        p.triangle(x1, yPos1, x2 + i, yPos1, x3 + a, yPos3);
+        p.triangle(x1, yPos1, x1 + i, yPos1, x3 + a, yPos3 + a);
+        p.triangle(x1, yPos1, x1, yPos1 + i, x3 + a, yPos3 + a);
+        p.pop();
+    };
+});
